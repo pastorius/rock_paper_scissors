@@ -40,3 +40,26 @@ class Player
 
 end
 
+class Game
+  attr_reader :history, :winner
+
+  def play
+    history = []
+
+    # loop and create plays until a winner is determined
+
+    winner = Player.new
+  end
+
+  private
+
+  def history=(h)
+    @history = h 
+  end
+
+  def winner=(player)
+    @winner = player
+  end
+
+end
+

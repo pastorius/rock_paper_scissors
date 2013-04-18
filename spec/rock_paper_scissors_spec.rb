@@ -45,6 +45,35 @@ describe Player do
   it "responds to strategy" do
     Player.new.must_respond_to(:strategy)
   end
+
+end
+describe Game do
+  it "can play a game" do
+    Game.new.must_respond_to(:play)
+  end
+
+
+  describe "game after playing" do
+
+    before do 
+      @game = Game.new
+      @game.play
+    end
+
+    it "can provide history" do
+      Game.new.must_respond_to(:history)
+    end
+    
+    it "provides a history array" do
+      Game.new.play.must_respond_to(:first)
+    end
+
+    it "has a winner after playing a game" do
+      @game.winner.wont_be_nil
+    end
+  end
+
+    
 end
 
 
